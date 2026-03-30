@@ -20,7 +20,7 @@ exports.loginController = async (req, res) => {
     res.cookie("token", result.token, {
       httpOnly: true,
       sameSite: "none",
-      secure: false,
+      secure: true,
       maxAge: 24 * 60 * 60 * 1000
     });
 
@@ -40,7 +40,7 @@ exports.logoutController = (req, res) => {
   res.clearCookie("token", {
     httpOnly: true,
     sameSite: "none",
-    secure: false
+    secure: true
   });
 
   res.json({
