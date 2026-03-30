@@ -24,7 +24,7 @@ exports.loginController = async (req, res) => {
       maxAge: 24 * 60 * 60 * 1000
     });
 
-    res.json({
+    return res.json({
       message: "Login successful",
       user: result.user
     });
